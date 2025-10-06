@@ -42,3 +42,24 @@ export const HeaderLists:HeaderLists[] = [
   },
  
 ];
+interface SocialIconProps{
+  name:string,
+
+}
+
+export const SocialIcon:SocialIconProps[] = [
+  {
+    name:"wp",
+    
+  }, {
+    name:"fb",
+   
+  }, {
+    name:"ins",
+    
+  }, {
+    name:"git",
+    
+  },
+
+]

@@ -3,9 +3,9 @@ import Header from "@/components/Header";
 
 const Layout = (props: any) => {
   return (
-    <div className="w-full min-h-screen flex flex-col bg-webBg text-white">
+    <div className="w-full min-h-screen flex flex-col bg text-white">
       <Header />
-      <div className=" mt-10">{props.children}</div>
+      <div className=" mt-20">{props.children}</div>
 
       <Footer />
     </div>

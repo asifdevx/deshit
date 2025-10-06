@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 .fi{
     filter: opacity(30);
@@ -38,10 +45,17 @@ h6 {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   
   }
+.justtify_content_center{
+   justify-content: center; 
+}
+.bg{
+    background: radial-gradient(92.05% 92.05% at 50% 32.11%, #35359F 0%, #33339A 0%, #232369 45.99%, #1D1D56 67.79%, #131339 100%);
+
+}
   
 @layer utilities{
     .max-screen {
-        @apply px-7 lg:px-14 xl:px-0 md:max-w-7xl w-full h-full mx-auto;
+        @apply px-7 lg:px-14 xl:px-0 md:max-w-7xl w-full  mx-auto;
       }
     .section_padding{
         @apply px-10 md:px-20 xl:px-0

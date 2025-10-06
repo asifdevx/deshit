@@ -13,26 +13,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          dark: "#2563EB",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          light: "#9CA3AF",
-          dark: "#374151",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        danger: {
-          DEFAULT: "#EF4444",
-          dark: "#DC2626",
-        },
-        modal: {
-          bg: "#1F1F1F",
-          border: "#4B5563",
-          overlay: "rgba(0,0,0,0.6)",
-        },
+        
         text: {
           primary: "#FFFFFF",
           secondary: "#9CA3AF",
@@ -71,7 +52,7 @@ const config: Config = {
           "950": "#0a0a0b",
         },
         darkbg: "#090F15",
-        darktext: "#667D94",
+        darkext: "#667D94",
         loadbg: "#9d9d9d",
         darkbox: "#0C1621",
         black: "#000000",
@@ -80,36 +61,7 @@ const config: Config = {
         sidebarBg: "#0a1625",
         sidebarText: "#cfd8e1",
         sidebarActive: "#1f4b6f",
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        chart: {
-          "1": "hsl(var(--chart-1))",
-          "2": "hsl(var(--chart-2))",
-          "3": "hsl(var(--chart-3))",
-          "4": "hsl(var(--chart-4))",
-          "5": "hsl(var(--chart-5))",
-        },
+        
       },
       screens: {
         small: "500px",
@@ -124,11 +76,7 @@ const config: Config = {
         modal: "0 10px 25px rgba(0,0,0,0.4)",
       },
       borderRadius: {
-        xl: "1rem",
-        "2xl": "1.5rem",
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      
       },
       animation: {
         widthIncrease: "widthIncrease 0.3s ease-in-out",
@@ -154,6 +102,9 @@ const config: Config = {
         "4/2": "4 / 2",
       },
       backgroundImage: {
+        btnBg:"conic-gradient(from 180deg at -50% 50%, #B94A5B 0deg, #6A4FFF 129.81deg, #6A4FFF 162.69deg, #B94A5B 360deg) ",
+       profile_backCir_bg:"linear-gradient(180deg, #B94A5B 0%, #6A4FFF 33.33%, #6A4FFF 66.67%)",
+        cardBg:"linear-gradient(180deg, #B94A5B 0%, #6A4FFF 66.67%, #6A4FFF 81.25%)",
         "bank-gradient": "linear-gradient(90deg, #0179FE 0%, #4893FF 100%)",
         webBg:
           "radial-gradient(circle at 50% 40%, #35359F 0%, #33339A 0%, #232369 46%, #1D1D56 68%, #131339 100%)",

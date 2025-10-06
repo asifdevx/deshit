@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Hero from '@/components/Home';
 
 const index = () => {
   return (
-    <div>index</div>
+    <div className='w-full h-full flex flex-col '>
+      <Hero/>
+    </div>
   )
 }
 
