@@ -1,29 +1,44 @@
 interface HeaderLists {
-  name: string,
-  link?: string,
-  islink: boolean, 
+  label: string,
+  route: string,
+ 
 }
 
 export const HeaderLists:HeaderLists[] = [
   {
-    name: "Home",
-    link: "/",
-    islink: true,
+    label: "Home",
+    route: "/",
+   
   },
   {
-    name: "Buy now",
-    link: "/buy",
-    islink: true,
+    label: "About",
+    route: "#about",
+   
   },
   {
-    name: "auction",
-    link: "/auction",
-    islink: true,
+    label: "Skills",
+    route: "#skills",
+   
   },
   {
-    name: "profile",
-    link: "/profile",
-    islink: true,
-  },
+    label: "Portfolio",
+    route: "#portfolio",
   
+  },
+  {
+    label: "Service",
+    route: "#service",
+  
+  },
+  {
+    label: "Projects",
+    route: "#projects",
+  
+  },
+  {
+    label: "Contact",
+    route: "#contact",
+  
+  },
+ 
 ];

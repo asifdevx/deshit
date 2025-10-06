@@ -134,6 +134,7 @@ const config: Config = {
         widthIncrease: "widthIncrease 0.3s ease-in-out",
         "spin-slow": "spin 1.5s linear infinite",
         fadeIn: "fadeIn 0.4s ease-in-out",
+        movingLine: "movingLine 2.5s linear infinite alternate",
       },
       keyframes: {
         widthIncrease: {
@@ -144,20 +145,27 @@ const config: Config = {
             width: "100%",
           },
         },
+
+        movingLine: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+
         fadeIn: {
           "0%": { opacity: "0", transform: "translateY(5px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
+
       aspectRatio: {
         "4/2": "4 / 2",
       },
       backgroundImage: {
         "bank-gradient": "linear-gradient(90deg, #0179FE 0%, #4893FF 100%)",
-        webBg: "radial-gradient(circle at 50% 40%, #35359F 0%, #33339A 0%, #232369 46%, #1D1D56 68%, #131339 100%)",
-        mwebBg:"linear-gradient(135deg, rgba(3,3,11,1) 0%, rgba(20,20,40,1) 100%)",
-        mobileBg:
-          "linear-gradient(0deg, rgba(255,254,254,0.6015424164524421) 33%, rgba(255,255,255,0.7069408740359897) 37%)",
+        webBg:
+          "radial-gradient(circle at 50% 40%, #35359F 0%, #33339A 0%, #232369 46%, #1D1D56 68%, #131339 100%)",
+        lineColor:
+          "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%, rgba(72, 139, 255, 0.357) 50%, rgba(0, 0, 0, 0) 100%)",
       },
     },
     fontFamily: {

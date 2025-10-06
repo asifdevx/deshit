@@ -1,14 +1,11 @@
 import Footer from "@/components/footer/Footer";
+import Header from "@/components/Header";
 
 const Layout = (props: any) => {
   return (
-    <div className="w-full min-h-screen bg-white text-black">
-
-      <header/>
-      <div className=" bg-webBg">{props.children}</div>
-
-
-      <div className=" bg-[rgba(59,139,246,0.2)]">{props.children}</div>
+    <div className="w-full min-h-screen flex flex-col bg-webBg text-white">
+      <Header />
+      <div className=" mt-10">{props.children}</div>
 
       <Footer />
     </div>

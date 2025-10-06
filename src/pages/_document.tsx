@@ -10,7 +10,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <title>fmcoin</title>
+        <title>DeshIt</title>
         <meta
           name="description"
           content=""

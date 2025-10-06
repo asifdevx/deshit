@@ -40,6 +40,9 @@ h6 {
   }
   
 @layer utilities{
+    .max-screen {
+        @apply px-7 lg:px-14 xl:px-0 md:max-w-7xl w-full h-full mx-auto;
+      }
     .section_padding{
         @apply px-10 md:px-20 xl:px-0
     }
