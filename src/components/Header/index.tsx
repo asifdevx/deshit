@@ -5,6 +5,8 @@ import { CiMenuFries } from "react-icons/ci";
 import { HeaderLists } from "../../config/HeaderLists";
 import MobileMenu from "../HelperCom/MobileSideBar";
 import CustomBtn from "../ui/customBtn";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -18,6 +20,15 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useGSAP(() => {
+    gsap.to("#line", {
+      xPercent: 100,
+      ease: "linear",
+      duration: 12,
+      repeat: -1,
+    });
+  });
+
   const handleclick = (link: string, isIcon?: boolean) => {
     if (isIcon) {
       setTheme(theme === "dark" ? "light" : "dark");
@@ -30,7 +41,7 @@ const Header = () => {
 
   return (
     <div
-      className={`w-full h-20 md:h-28 fixed top-0 left-0 z-50 text-white flex flex-col transition-all duration-500 ${
+      className={`w-full h-16 md:h-22 fixed top-0 left-0 z-50 text-white flex flex-col transition-all duration-500 ${
         isScroll
           ? "backdrop-blur-md bg-black/40 shadow-[0_4px_15px_rgba(0,0,0,0.5)]"
           : ""
@@ -81,14 +92,17 @@ const Header = () => {
 
       {/* Animated Line (visible only when not scrolled) */}
       <div
-  className={`relative h-[1px] bg-lineColor w-full overflow-hidden transition-opacity duration-700 ${
-    isScroll ? "opacity-0" : "opacity-100"
-  }`}
->
-  <div
-    className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-transparent via-[#fffffffd] to-transparent animate-movingLine rounded-sm shadow-[0_0_10px_rgba(249,74,91,0.6)]"
-  />
-</div>
+        className={`relative h-[1px] bg-lineColor w-full overflow-hidden transition-opacity ${
+          isScroll ? "opacity-0" : "opacity-100"
+        }`}
+      >
+        <div
+          id="line"
+          className="absolute top-0 left-0 h-full w-full rounded-sm shadow-[0_0_10px_rgba(249,74,91,0.6)]"
+        >
+          <div className="h-full w-[100px] bg-gradient-to-r from-transparent via-[#fffffffd] to-transparent " />
+        </div>
+      </div>
     </div>
   );
 };

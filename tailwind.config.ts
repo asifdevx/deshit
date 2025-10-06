@@ -134,22 +134,15 @@ const config: Config = {
         widthIncrease: "widthIncrease 0.3s ease-in-out",
         "spin-slow": "spin 1.5s linear infinite",
         fadeIn: "fadeIn 0.4s ease-in-out",
-        movingLine: "movingLine 2.5s linear infinite alternate",
+     
       },
       keyframes: {
         widthIncrease: {
-          "0%": {
-            width: "0%",
-          },
-          "100%": {
-            width: "100%",
-          },
+          "0%": { left: "0", right: "100%" },
+          "100%": { left: "0", right: "0" },
         },
 
-        movingLine: {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(100%)" },
-        },
+    
 
         fadeIn: {
           "0%": { opacity: "0", transform: "translateY(5px)" },

@@ -22,12 +22,13 @@ const MobileMenu = ({ isOpen, onClose, activeLink, setactiveLink }: any) => {
 
       {/* Mobile menu panel */}
       <div
-        className={`fixed top-0 left-0  h-full w-64 bg-black text-white z-30 transform transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed top-0 left-0  h-full w-72 bg-black text-white z-30 transform transition-all ease-in-out
+        duration-500 ${
+          isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-50"
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between  px-4 py-12">
+        <div className="flex items-center justify-between  px-4 pt-12">
           <Image src="/logo.png" alt="logo" width={50} height={40} />
           <button
             onClick={onClose}
@@ -75,7 +76,7 @@ const MobileMenu = ({ isOpen, onClose, activeLink, setactiveLink }: any) => {
           >
             {theme === "dark" ? (
               <>
-                <AiFillSun className="text-yellow-400" /> Light Mode
+                <AiFillSun className="text-yellow" /> Light Mode
               </>
             ) : (
               <>
