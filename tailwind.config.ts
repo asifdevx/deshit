@@ -110,7 +110,8 @@ const config: Config = {
           "radial-gradient(circle at 50% 40%, #35359F 0%, #33339A 0%, #232369 46%, #1D1D56 68%, #131339 100%)",
         lineColor:
           "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%, rgba(72, 139, 255, 0.357) 50%, rgba(0, 0, 0, 0) 100%)",
-      },
+      hover_service_bg : " linear-gradient(180deg, #F94A5B 0%, #6A4FFF 50%)",
+        },
     },
     fontFamily: {
       ponomar: ["Ponomar", "system-ui"],

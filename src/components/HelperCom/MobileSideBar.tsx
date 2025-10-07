@@ -2,13 +2,10 @@ import React from "react";
 import Image from "next/image";
 import { HeaderLists } from "@/config/HeaderLists";
 import { useTheme } from "next-themes";
-import { AiFillSun } from "react-icons/ai";
-import { RxMoon } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 
 const MobileMenu = ({ isOpen, onClose, activeLink, setactiveLink }: any) => {
-  const { theme, setTheme } = useTheme();
-  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+
 
   return (
     <>
@@ -21,12 +18,11 @@ const MobileMenu = ({ isOpen, onClose, activeLink, setactiveLink }: any) => {
       )}
 
       {/* Mobile menu panel */}
-      <div
-        className={`fixed top-0 left-0  h-full w-72 bg-black text-white z-30 transform transition-all ease-in-out
-        duration-500 ${
-          isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-50"
-        }`}
-      >
+    <div
+  className={`fixed top-0 left-0 h-full w-72 bg-black/90 text-white z-30 transform transition-all duration-500 ${
+    isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+  }`}
+>
         {/* Header */}
         <div className="flex items-center justify-between  px-4 pt-12">
           <Image src="/logo.png" alt="logo" width={50} height={40} />
@@ -63,28 +59,12 @@ const MobileMenu = ({ isOpen, onClose, activeLink, setactiveLink }: any) => {
               >
                 {item.label}
               </a>
-              {/* Divider line below each item */}
+            
             </div>
           ))}
         </div>
 
-        {/* Theme toggle button (optional) */}
-        <div className="absolute bottom-4 left-4 flex items-center gap-2">
-          <button
-            onClick={toggleTheme}
-            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition"
-          >
-            {theme === "dark" ? (
-              <>
-                <AiFillSun className="text-yellow" /> Light Mode
-              </>
-            ) : (
-              <>
-                <RxMoon className="text-blue-400" /> Dark Mode
-              </>
-            )}
-          </button>
-        </div>
+     
       </div>
     </>
   );

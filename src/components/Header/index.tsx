@@ -9,7 +9,6 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Header = () => {
-  const { theme, setTheme } = useTheme();
   const [isScroll, setScroll] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setactiveLink] = useState<string>(HeaderLists[0].route);
@@ -29,22 +28,22 @@ const Header = () => {
     });
   });
 
-  const handleclick = (link: string, isIcon?: boolean) => {
-    if (isIcon) {
-      setTheme(theme === "dark" ? "light" : "dark");
-    } else {
+  const handleclick = (link: string) => {
+  
       setactiveLink(link);
-    }
+    
   };
 
   const toggleMobileMenu = () => setIsMenuOpen(!isMenuOpen);
 
+ 
+
   return (
     <div
-      className={`w-full h-16 md:h-22 fixed top-0 left-0 z-50 text-white flex flex-col transition-all duration-500 ${
-        isScroll
-          ? "backdrop-blur-md bg-black/40 shadow-[0_4px_15px_rgba(0,0,0,0.5)]"
-          : ""
+      className={`w-full h-16 md:h-22 fixed top-0 left-0 z-50 text-white flex flex-col transition-all  ${
+        isScroll && !isMenuOpen
+          ? "backdrop-blur-md bg-black/40 shadow-[0_4px_15px_rgba(0,0,0,0.5)] duration-200" : isScroll && isMenuOpen && "duration-0"
+          
       }`}
     >
       {/* Main Header */}
@@ -74,11 +73,11 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className="flex md:hidden">
+        <div className="flex md:hidden relative z-50">
           <CustomBtn
             text={<CiMenuFries className="text-2xl" />}
             handleclick={toggleMobileMenu}
-            othercss=""
+            othercss="relative z-50 "
           />
           <MobileMenu
             isOpen={isMenuOpen}

@@ -14,7 +14,7 @@ export const AboutList = [
         title:"Satisfied Client"
     },  {
         img:"about1",
-        count:14,
+        count:300,
         title:"Award Winner"
     },
 ]

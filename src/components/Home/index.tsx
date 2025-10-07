@@ -8,7 +8,7 @@ import { useMediaQuery } from "usehooks-ts";
 const index = () => {
   const desktop = useMediaQuery("(min-width: 768px)");
   return (
-    <div className="mt-14 max-screen flex h-full flex-col md:flex-row gap-5 md:gap-0 justify-center items-center justtify_content_center md:justify-between text-white">
+    <section id="home" className="mt-14 max-screen flex h-full flex-col md:flex-row gap-5 md:gap-0 justify-center items-center justtify_content_center md:justify-between text-white">
       {/* -------para---------- */}
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center md:items-start gap-8">
         <h4 className="text-[22px] md:text-[1.9rem] ">
@@ -88,7 +88,7 @@ const index = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

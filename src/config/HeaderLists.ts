@@ -7,7 +7,7 @@ interface HeaderLists {
 export const HeaderLists:HeaderLists[] = [
   {
     label: "Home",
-    route: "/",
+    route: "#home",
    
   },
   {
