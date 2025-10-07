@@ -11,24 +11,23 @@ const index = () => {
     <div className="mt-14 max-screen flex h-full flex-col md:flex-row gap-5 md:gap-0 justify-center items-center justtify_content_center md:justify-between text-white">
       {/* -------para---------- */}
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center md:items-start gap-8">
-        <h4 className="">
+        <h4 className="text-[22px] md:text-[1.9rem] ">
           I AM <span className="text-[#B94A5B]">ARAFAT</span> HOSSAIN SOBUJ
         </h4>
-        <div className="bg-[#2A2A3A94] text-lg rounded-lg p-4 font-bold text-justify md:text-normal-case break-words  ">
+        <div className="bg-[#2A2A3A94] text-lg rounded-lg p-4 font-bold text-center md:text-start md:text-normal-case break-words  ">
           Full-Stack Mobile App Developer | 9+ Years Experience Expert in
           Flutter & Node.js | 40+ Successful Projects Delivered
         </div>
         <h3 className="font-semibold text-3xl w-full md:w-3/4 tracking-[2px]">
           Maximize Your Business{" "}
-          <span className="text-[#B94A5B]">Potential</span>{" "}
-          with Custom Web Development{" "}
-          <span className="text-[#6A4FFF]">Solutions!</span>
+          <span className="text-[#B94A5B]">Potential</span> with Custom Web
+          Development <span className="text-[#6A4FFF]">Solutions!</span>
         </h3>
         <p className="text-[#DBB9B9] w-full md:w-[60%]">
           Take your business to the next level with custom web development
           solutions.
         </p>
-        <div className="flex flex-col md:flex-row items-center gap-10">
+        <div className="w-full flex flex-col md:flex-row md:items-center items-start gap-3 md:gap-10">
           <button className="bg-btnBg px-3 py-2 flex items-center gap-1 rounded-[4px] shadow-lg">
             <p> Get In Touch</p>
             <FaArrowRight fontSize={24} />
@@ -39,37 +38,41 @@ const index = () => {
         </div>
       </div>
       {/* -------Image---------- */}
-      <div className="md:w-1/2 w-[80%] flex flex-col items-center justify-center   ">
+      <div className="md:w-1/2 w-[80%] flex flex-col items-center justify-center">
         <div className="w-full flex flex-col items-center justify-center relative">
-          <div className="w-full absolute inset-0 flex items-center justify-center">
-            <div className="absolute w-[15rem] h-[15rem] small:w-[16rem] small:h-[16rem] md:w-[21rem] md:h-[21rem] bg-profile_backCir_bg rounded-full z-0" />
-            <div className="absolute w-60 h-60 md:w-80 md:h-80 bg-[#D9D9D921] rounded-full z-20  translate-x-7 " />
-          </div>
-          <div className="absolute inset-0 flex items-center justify-around md:justify-between px-8 sm:px-10 md:px-16 lg:px-4  lg:justify-around xl:justify-center  z-40">
+          <div className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full p-[8px] bg-profile_backCir_bg">
+          <div className="absolute w-full h-full bg-[#D9D9D921] rounded-full z-10 top-[2px] left-[20px]" />
+            <div className="relative w-full h-full rounded-full overflow-hidden bg-white">
+              <Image
+                src="/profile.png"
+                alt="profile"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="absolute -left-8 md:-left-14 top-1/2 -translate-y-1/2 z-20">
             <Image
               src={"/frame1.svg"}
               alt={"profile"}
-              width={130}
-              height={130}
-              className=" object-contain px-3 py-2 relative right-12 small:right-7 sm:right-1 md:right-16 lg:right-12  rounded-full "
+              width={desktop? 130 : 90}
+              height={desktop? 130 : 90}
+              className=" object-contain"
             />
+            </div>
+            <div className="absolute -right-9 md:-right-[3.5rem] top-1/2 -translate-y-1/2 z-20">
             <Image
               src={"/frame2.svg"}
               alt={"profile"}
-              width={130}
-              height={130}
-              className=" object-contain px-3 py-2 relative left-14 small:left-9 sm:left-6 md:left-16  rounded-full"
+             
+              width={desktop? 130 : 90}
+              height={desktop? 130 : 90}
+              className=" object-contain"
             />
+            </div>
           </div>
-          <Image
-            src={"/profile.png"}
-            alt={"profile"}
-            width={desktop ? 320 : 250}
-            height={200}
-            className="rounded-full object-contain px-3 py-2 relative"
-          />
+
         </div>
-        <div className="flex items-center  justify-center gap-6 ">
+        <div className="flex items-center mb-3 justify-center gap-6 ">
           {SocialIcon.map((item, idx) => (
             <Image
               key={idx}
@@ -78,9 +81,8 @@ const index = () => {
               height={40}
               alt={`${item.name}.svg`}
               className={cn(
-                "object-fit",
-                (idx === 1 || idx === 2) && "translate-y-8",
-                
+                "border-2 border-white rounded-full  ",
+                (idx === 1 || idx === 2) && "translate-y-8"
               )}
             />
           ))}

@@ -57,7 +57,7 @@ const Header = () => {
         </a>
 
         {/* Desktop Nav */}
-        <div className="md:flex hidden items-center justify-between gap-4 lg:gap-5">
+        <div className="md:flex hidden items-center justify-between gap-4 lg:gap-8 xl:gap-14">
           {HeaderLists.map((items, idx) => (
             <a
               key={idx}
