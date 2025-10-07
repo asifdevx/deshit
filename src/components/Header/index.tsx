@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import { useTheme } from "next-themes";
+
 import { CiMenuFries } from "react-icons/ci";
 import { HeaderLists } from "../../config/HeaderLists";
 import MobileMenu from "../HelperCom/MobileSideBar";

@@ -12,7 +12,7 @@ const Skills = () => {
       </div>
 
       {/* Skills Container */}
-      <div className="bg-[#6E6E6E30] w-full backdrop-blur-md py-10 ">
+      <section id="skills" className="bg-[#6E6E6E30] w-full backdrop-blur-md py-10 ">
         <div className="px-3 md:px-14 flex flex-col md:flex-row items-start justify-center gap-5">
 
           {/* Left Side – Skill Icons */}
@@ -50,7 +50,7 @@ const Skills = () => {
           </div>
 
         </div>
-      </div>
+      </section>
     </>
   );
 };
