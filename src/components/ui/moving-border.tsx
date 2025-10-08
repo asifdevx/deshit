@@ -58,9 +58,9 @@ const sizes = {
 
 
 
-const AnimatedBorder = ({ title, arrow , borderRadius,handleClick }: AnimatedBorderProps) => {
+const AnimatedBorder = ({ title, arrow , borderRadius,handleClick,type }: AnimatedBorderProps) => {
   const buttonClasses = cn(
-    "group relative flex items-center justify-center gap-2 px-6 py-2 text-base font-medium transition-all duration-300",
+    "group relative flex items-center justify-center gap-2 text-base font-medium transition-all duration-300",
     "bg-moving_button_bg hover:bg-btnBg",
     "text-black hover:text-white",
    
@@ -76,8 +76,8 @@ const AnimatedBorder = ({ title, arrow , borderRadius,handleClick }: AnimatedBor
       style={{ borderRadius }}
       onClick={handleClick}
     >
-      <button className={buttonClasses} style={{ borderRadius }}>
-        <div className="flex items-center justify-center relative transition-all duration-300">
+      <button className={buttonClasses} style={{ borderRadius }} type={type}>
+        <div className="flex items-center justify-center relative transition-all duration-300 px-6 py-2">
           {/* Arrow */}
           {arrow && (
             <span

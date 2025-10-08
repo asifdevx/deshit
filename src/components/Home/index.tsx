@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { useMediaQuery } from "usehooks-ts";
+import AnimatedBorder from "../ui/moving-border";
 
 const index = () => {
   const desktop = useMediaQuery("(min-width: 768px)");
@@ -28,13 +29,10 @@ const index = () => {
           solutions.
         </p>
         <div className="w-full flex flex-col md:flex-row md:items-center items-start gap-3 md:gap-10">
-          <button className="bg-btnBg px-3 py-2 flex items-center gap-1 rounded-[4px] shadow-lg">
-            <p> Get In Touch</p>
-            <FaArrowRight fontSize={24} />
-          </button>
-          <button className="bg-btnBg px-3 py-2 flex items-center gap-1 rounded-[4px] shadow-lg text-white">
-            Download CV
-          </button>
+          
+          <AnimatedBorder title="Get In Touch" arrow="&rarr;" borderRadius="2.5px"/>
+          <AnimatedBorder title="Download CV"  borderRadius="2.5px"/>
+
         </div>
       </div>
       {/* -------Image---------- */}

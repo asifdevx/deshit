@@ -73,7 +73,6 @@ export default function ProjectShowcase() {
             >
               {/* IMAGE CONTAINER */}
               <div className="relative w-full aspect-[6/5] flex items-center justify-center bg-black">
-                {/* White background layer */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="w-[90%] h-[90%] rounded-xl bg-white" />
                 </div>
@@ -99,7 +98,7 @@ export default function ProjectShowcase() {
                   {app.description}
                 </p>
             
-                <AnimatedBorder title="Click to visit" arrow="&rarr;" borderRadius="300px"/>
+                <AnimatedBorder title="Click to visit" arrow="&rarr;" borderRadius="300px" />
             
                 {/* Extra Images */}
                 {app.images.length > 1 && (

@@ -6,7 +6,7 @@ import ContentSlider from "../HelperCom/Slider";
 
 const Testimonials = () => {
   return (
-    <section className="w-full  px-5 flex justify-center  flex-col gap-4 mt-10 ">
+    <section className="w-full  px-5 flex justify-center  flex-col gap-4 mt-10 " id="testimonials">
       <SectionHeading title="Client Reviews" hasDes={false} />
   
     <ContentSlider autoplayDelay={4000} >

@@ -1,16 +1,20 @@
+import { cn } from '@/utils/cn'
 import React from 'react'
 
-const Input = ({ placeholder, name, type, value, handleChange }:InputProps) => {
+const Input = ({ placeholder, name, type, value, handleChange,othercss }:InputProps) => {
 
   return (
     <input
     placeholder={placeholder}
     type={type}
-    step="1"
-    required
+    name={name}
     value={value}
-    onChange={handleChange}
-    className="my-2 w-full p-2 outline-none bg-white/35 text-black border-[#675e5e44] border-2 rounded-xl text-sm white-glassmorphism"
+      required
+   onChange={ (e)=>handleChange(e)}
+    className={cn("my-2 w-full rounded-lg p-4 text-sm outline-none transition-all duration-300 ease-in-out",
+    "bg-[#27262B] text-white placeholder:text-[#8E8B8B]",
+    "focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#27262B]"
+    ,othercss)}
   />
   )
 }
