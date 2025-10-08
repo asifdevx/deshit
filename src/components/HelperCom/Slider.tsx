@@ -1,5 +1,5 @@
-"use client";
 import { useRef, useEffect, useState, ReactNode } from "react";
+import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -64,14 +64,18 @@ const ContentSlider = ({
           el: paginationRef.current,
           clickable: true,
         }}
-        onBeforeInit={(swiper: { params: { navigation: { prevEl: HTMLButtonElement; nextEl: HTMLButtonElement; }; pagination: { el: HTMLDivElement; }; }; }) => {
+        onBeforeInit={(swiper: SwiperType) => {
           if (prevRef.current && nextRef.current && paginationRef.current) {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.params.pagination.el = paginationRef.current;
+            if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+            }
+            if (swiper.params.pagination && typeof swiper.params.pagination !== "boolean") {
+              swiper.params.pagination.el = paginationRef.current;
+            }
           }
         }}
-        onInit={(swiper: { navigation: { init: () => void; update: () => void; }; pagination: { init: () => void; update: () => void; }; }) => {
+        onInit={(swiper: SwiperType) => {
           swiper.navigation.init();
           swiper.navigation.update();
           swiper.pagination.init();

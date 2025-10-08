@@ -1,4 +1,4 @@
-import Footer from "@/components/footer/Footer";
+
 import Header from "@/components/Header";
 
 const Layout = (props: any) => {
@@ -7,7 +7,7 @@ const Layout = (props: any) => {
       <Header />
       <div className=" mt-20">{props.children}</div>
 
-      <Footer />
+
     </div>
   );
 };
