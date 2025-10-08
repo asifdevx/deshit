@@ -73,7 +73,7 @@ const Service = () => {
           <h5>A Full Stack Web Developer</h5>
           <p className="text-[#DBB9B9BA]">As a Full Stack Web Developer, I am responsible for designing and building complete web applications from start to finish. This includes creating user interfaces, writing server-side code, and managing databases. With my comprehensive knowledge of the entire web development process, I can efficiently turn ideas into fully functional websites or applications.</p>
           <AnimatedBorder title="Contact Me" arrow="&rarr;" borderRadius="2.5px"/>
-          <AnimatedBorder title="Contact Me" arrow="&rarr;" borderRadius="300px"/>
+        
         </div>
       </div>
     </section>
