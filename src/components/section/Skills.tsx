@@ -16,7 +16,7 @@ const Skills = () => {
         <div className="px-3 md:px-14 flex flex-col md:flex-row items-start justify-center gap-5">
 
           {/* Left Side – Skill Icons */}
-          <div className="bg-[#303030] w-full md:w-1/2 grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-2 p-4 rounded-2xl border border-white/40">
+          <div className="bg-[#303030] w-full md:w-1/2 grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2 md:p-4 rounded-2xl border border-white/40">
             {Array.from({ length: 10 }, (_, idx) => (
               <div
                 key={idx+542}

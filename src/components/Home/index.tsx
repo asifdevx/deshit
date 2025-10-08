@@ -76,10 +76,10 @@ const index = () => {
           {SocialIcon.map((item, idx) => (
             <Image
               key={idx}
-              src={`${item.name}.svg`}
+              src={`${item}.svg`}
               width={40}
               height={40}
-              alt={`${item.name}.svg`}
+              alt={`${item}.svg`}
               className={cn(
                 "border-2 border-white rounded-full  ",
                 (idx === 1 || idx === 2) && "translate-y-8"

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const SectionHeading = ( { title , hasDes,description,  }:{title:string,hasDes:boolean,description?:string}) => {
   return (
-    <div className="flex flex-col items-start gap-3 ">
+    <div className="max-screen flex flex-col items-start gap-3 ">
         <div className="flex items-center gap-2">
           <Image
             src={"/logOut.png"}

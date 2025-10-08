@@ -47,4 +47,5 @@ type AnimatedBorderProps = {
   title: string;
   arrow?: string;
   borderRadius?: string;
+  handleClick?:()=>void;
 };

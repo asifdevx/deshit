@@ -21,18 +21,18 @@ export const HeaderLists:HeaderLists[] = [
    
   },
   {
-    label: "Portfolio",
-    route: "#portfolio",
-  
-  },
-  {
     label: "Service",
     route: "#service",
-  
+    
   },
   {
     label: "Projects",
     route: "#projects",
+    
+  },
+  {
+    label: "Testimonials",
+    route: "#testimonials",
   
   },
   {
@@ -42,24 +42,6 @@ export const HeaderLists:HeaderLists[] = [
   },
  
 ];
-interface SocialIconProps{
-  name:string,
 
-}
 
-export const SocialIcon:SocialIconProps[] = [
-  {
-    name:"wp",
-    
-  }, {
-    name:"fb",
-   
-  }, {
-    name:"ins",
-    
-  }, {
-    name:"git",
-    
-  },
-
-]
+export const SocialIcon = ["wp","fb","ins","git"]

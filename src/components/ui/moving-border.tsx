@@ -58,13 +58,13 @@ const sizes = {
 
 
 
-const AnimatedBorder = ({ title, arrow , borderRadius }: AnimatedBorderProps) => {
+const AnimatedBorder = ({ title, arrow , borderRadius,handleClick }: AnimatedBorderProps) => {
   const buttonClasses = cn(
     "group relative flex items-center justify-center gap-2 px-6 py-2 text-base font-medium transition-all duration-300",
     "bg-moving_button_bg hover:bg-btnBg",
     "text-black hover:text-white",
    
-    // "focus:outline-none focus:ring-4 focus:ring-cyan-300/50"
+   
   );
 
   return (
@@ -74,6 +74,7 @@ const AnimatedBorder = ({ title, arrow , borderRadius }: AnimatedBorderProps) =>
       trailColor="rgba(19,253,253,0.9)"
       trailSize="lg"
       style={{ borderRadius }}
+      onClick={handleClick}
     >
       <button className={buttonClasses} style={{ borderRadius }}>
         <div className="flex items-center justify-center relative transition-all duration-300">
