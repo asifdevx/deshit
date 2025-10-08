@@ -39,3 +39,12 @@ interface MobileSideBarProps {
  
 
 }
+
+
+
+// moving border 
+type AnimatedBorderProps = {
+  title: string;
+  arrow?: string;
+  borderRadius?: string;
+};

@@ -58,7 +58,7 @@ const Header = () => {
         <div className="md:flex hidden items-center justify-between gap-4 lg:gap-8 xl:gap-14">
           {HeaderLists.map((items, idx) => (
             <a
-              key={idx}
+              key={idx*idx}
               onClick={() => handleclick(items.route)}
               href={items.route || "/"}
               className={`${

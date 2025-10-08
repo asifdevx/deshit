@@ -3,6 +3,8 @@ import Image from "next/image";
 import SectionHeading from "../HelperCom/sectionHeading";
 import { ServiceList } from "@/config/ServiceList";
 import { FaArrowRight } from "react-icons/fa";
+import AnimatedBorder from "../ui/moving-border";
+
 
 const Service = () => {
   return (
@@ -70,9 +72,8 @@ const Service = () => {
           </div>
           <h5>A Full Stack Web Developer</h5>
           <p className="text-[#DBB9B9BA]">As a Full Stack Web Developer, I am responsible for designing and building complete web applications from start to finish. This includes creating user interfaces, writing server-side code, and managing databases. With my comprehensive knowledge of the entire web development process, I can efficiently turn ideas into fully functional websites or applications.</p>
-          <button className="bg-btnBg px-3 py-2 flex items-center gap-1 rounded-[4px] shadow-md mt-4 border-1 border-black shadow-black">
-          Contact Me →
-          </button>
+          <AnimatedBorder title="Contact Me" arrow="&rarr;" borderRadius="2.5px"/>
+          <AnimatedBorder title="Contact Me" arrow="&rarr;" borderRadius="300px"/>
         </div>
       </div>
     </section>

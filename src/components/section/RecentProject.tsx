@@ -38,7 +38,7 @@ export default function ProjectShowcase() {
 
         {recentAppProjectData.map((categoryItem, idx) => (
           <button
-            key={idx}
+            key={idx/idx}
             onClick={() => setActiveCategory(categoryItem.category)}
             className={`px-5 py-2 rounded-full font-medium transition 
               ${activeCategory === categoryItem.category
@@ -63,10 +63,10 @@ export default function ProjectShowcase() {
             transition={{ duration: 0.4 }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {activeApps.map((app, idx) => (
+            {activeApps?.map((app, idx) => (
             
               <motion.div
-                key={idx}
+                key={idx*idx*idx}
                 whileHover={{ scale: 1.03 }} 
                 className="rounded-2xl shadow-md overflow-hidden hover:shadow-lg bg-black text-white transition-shadow duration-300"
               >
@@ -93,7 +93,7 @@ export default function ProjectShowcase() {
                     <div className="flex gap-2 mt-3 overflow-x-auto pb-2">
                       {app.images.slice(1).map((img, i) => (
                         <Image
-                          key={i}
+                          key={i+i}
                           src={img}
                           alt={`${app.title} screenshot ${i + 1}`}
                           width={80}

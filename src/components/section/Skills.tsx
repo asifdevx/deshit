@@ -19,7 +19,7 @@ const Skills = () => {
           <div className="bg-[#303030] w-full md:w-1/2 grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-2 p-4 rounded-2xl border border-white/40">
             {Array.from({ length: 10 }, (_, idx) => (
               <div
-                key={idx}
+                key={idx+542}
                 className="flex items-center justify-center  rounded-xl p-6 hover:scale-105 transition-transform"
               >
                 <Image
@@ -38,7 +38,7 @@ const Skills = () => {
             {SkillList.map((group, groupIdx) => (
               <ul key={groupIdx} className="list-disc list-inside border-2 border-white p-2 gap-3 " >
                 {group.details.map((item, itemIdx) => (
-                  <li key={itemIdx} className=''>
+                  <li key={itemIdx+2} className=''>
                     <span className="text-lg md:text-sm lg:text-md text-md font-semibold tracking-wide  md:tracking-normal lg:tracking-wide">
                       {item.key} 
                     </span>
