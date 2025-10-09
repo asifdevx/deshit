@@ -16,14 +16,14 @@ export const HeaderLists:HeaderLists[] = [
    
   },
   {
-    label: "Skills",
-    route: "#skills",
-   
-  },
-  {
     label: "Service",
     route: "#service",
     
+  },
+  {
+    label: "Skills",
+    route: "#skills",
+   
   },
   {
     label: "Projects",

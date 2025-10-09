@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect, useRef } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { HeaderLists } from "../../config/HeaderLists";
 import MobileMenu from "../HelperCom/MobileSideBar";
@@ -11,6 +10,27 @@ const Header = () => {
   const [isScroll, setScroll] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setactiveLink] = useState<string>(HeaderLists[0].route);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    if (!sections.length) return;
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            if (id) setactiveLink(`#${id}`);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    sections.forEach((sec) => observerRef.current?.observe(sec));
+
+    return () => observerRef.current?.disconnect();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScroll(window.scrollY > 30);
@@ -27,22 +47,23 @@ const Header = () => {
     });
   });
 
-  const handleclick = (link: string) => {
-  
-      setactiveLink(link);
-    
+  const handleClick = (link: string) => {
+    setactiveLink(link);
+    setIsMenuOpen(false);
+    const section = document.querySelector(link);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   const toggleMobileMenu = () => setIsMenuOpen(!isMenuOpen);
-
- 
 
   return (
     <div
       className={`w-full h-16 md:h-22 fixed top-0 left-0 z-50 text-white flex flex-col transition-all  ${
         isScroll && !isMenuOpen
-          ? "backdrop-blur-md bg-black/40 shadow-[0_4px_15px_rgba(0,0,0,0.5)] duration-200" : isScroll && isMenuOpen && "duration-0"
-          
+          ? "backdrop-blur-md bg-black/40 shadow-[0_4px_15px_rgba(0,0,0,0.5)] duration-200"
+          : isScroll && isMenuOpen && "duration-0"
       }`}
     >
       {/* Main Header */}
@@ -58,8 +79,8 @@ const Header = () => {
         <div className="md:flex hidden items-center justify-between gap-4 lg:gap-8 xl:gap-14">
           {HeaderLists.map((items, idx) => (
             <a
-              key={idx*idx}
-              onClick={() => handleclick(items.route)}
+              key={idx * idx}
+              onClick={() => handleClick(items.route)}
               href={items.route || "/"}
               className={`${
                 activeLink === items.route &&
@@ -71,7 +92,6 @@ const Header = () => {
           ))}
         </div>
 
-        {/* Mobile Menu */}
         <div className="flex md:hidden relative z-50">
           <CustomBtn
             text={<CiMenuFries className="text-2xl" />}
@@ -82,13 +102,11 @@ const Header = () => {
             isOpen={isMenuOpen}
             onClose={toggleMobileMenu}
             activeLink={activeLink}
-            isScroll={isScroll}
+            
             setactiveLink={setactiveLink}
           />
         </div>
       </div>
-
-      {/* Animated Line (visible only when not scrolled) */}
       <div
         className={`relative h-[1px] bg-lineColor w-full overflow-hidden transition-opacity ${
           isScroll ? "opacity-0" : "opacity-100"

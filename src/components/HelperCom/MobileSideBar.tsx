@@ -1,30 +1,64 @@
-import React from "react";
+
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { HeaderLists } from "@/config/HeaderLists";
-import { useTheme } from "next-themes";
 import { IoCloseOutline } from "react-icons/io5";
 
-const MobileMenu = ({ isOpen, onClose, activeLink, setactiveLink }: any) => {
+interface MobileMenuProps {
+  isOpen: boolean;
+  onClose: () => void;
+  activeLink: string;
+  setactiveLink: (link: string) => void;
+}
 
+const MobileMenu: React.FC<MobileMenuProps> = ({
+  isOpen,
+  onClose,
+  activeLink,
+  setactiveLink,
+}) => {
+  // ✅ Lock body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Handle menu item click
+  const handleItemClick = (route: string) => {
+    setactiveLink(route);
+    onClose();
+
+    // Smooth scroll to section
+    const section = document.querySelector(route);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <>
       {/* Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 opacity-50 bg-black z-20"
+          className="fixed inset-0 bg-black/50 z-40"
           onClick={onClose}
         />
       )}
 
-      {/* Mobile menu panel */}
-    <div
-  className={`fixed top-0 left-0 h-full w-72 bg-black/90 text-white z-30 transform transition-all duration-500 ${
-    isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
-  }`}
->
+      {/* Mobile sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full w-72 bg-black/90 text-white z-50 transform transition-transform duration-500 ease-in-out ${
+          isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+        }`}
+      >
         {/* Header */}
-        <div className="flex items-center justify-between  px-4 pt-12">
+        <div className="flex items-center justify-between px-4 pt-12">
           <Image src="/logo.png" alt="logo" width={50} height={40} />
           <button
             onClick={onClose}
@@ -32,39 +66,31 @@ const MobileMenu = ({ isOpen, onClose, activeLink, setactiveLink }: any) => {
           >
             {/* Animated background */}
             <span className="absolute inset-0 bg-blue-400 scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-full origin-center" />
-
-            {/* Icon */}
+            {/* Close Icon */}
             <span className="relative z-10 text-xl text-blue-400 group-hover:text-black transition-colors duration-500">
-              <IoCloseOutline size={25}/>
+              <IoCloseOutline size={25} />
             </span>
           </button>
         </div>
 
         {/* Menu items */}
-        <div className="mt-2 flex flex-col">
+        <div className="mt-6 flex flex-col">
           {HeaderLists.map((item, idx) => (
-            <div key={idx} className="w-full px-2 mt-3 uppercase ">
+            <div key={idx} className="w-full px-2 mt-3 uppercase">
               <div className="w-full h-[1px] bg-gray-700/90" />
-              <a
-                href={item.route || "#"}
-                onClick={() => {
-                  setactiveLink(item.route);
-                  onClose();
-                }}
-                className={`block px-4 py-2 w-full transition text-sm ${
-                  activeLink === item.route && idx < 5
-                    ? "text-red-300 "
+              <button
+                onClick={() => handleItemClick(item.route)}
+                className={`block px-4 py-2 w-full text-left text-sm transition ${
+                  activeLink === item.route
+                    ? "text-red-300 font-semibold"
                     : "text-white"
                 }`}
               >
                 {item.label}
-              </a>
-            
+              </button>
             </div>
           ))}
         </div>
-
-     
       </div>
     </>
   );

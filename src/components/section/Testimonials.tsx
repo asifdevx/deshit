@@ -21,7 +21,7 @@ const Testimonials = () => {
               <span key={i}>★</span>
             ))}
           </div>
-          <p className="text-white/80 flex-1 text-sm">"{t.text}"</p>
+          <p className="text-white/80 flex-1 text-lg md:text-2xl">"{t.text}"</p>
           <div className="flex items-center gap-4 mt-4">
             <Image
               src={t.image}
