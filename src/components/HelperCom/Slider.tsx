@@ -44,7 +44,6 @@ const ContentSlider = ({
   const slidesPerView = isMobile ? 1 : isTablet ? 2 : 3;
   const spaceBetween = isMobile ? 0 : isTablet ? 10 : 20;
 
-  // Normalize children into array
   const slides = Array.isArray(children) ? children : [children];
 
   return (
