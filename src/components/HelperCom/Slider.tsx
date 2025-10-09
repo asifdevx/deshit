@@ -97,13 +97,13 @@ const ContentSlider = ({
       <div className="flex justify-center items-center gap-4 mt-6">
         <button
           ref={prevRef}
-          className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition"
+          className="p-3 bg-[#4C4C4C3B] rounded-full hover:bg-hover_service_bg transition hover:[box-shadow:0px_4px_6px_-4px_#AD46FF40,0px_10px_15px_-3px_#AD46FF40]"
         >
-          <FiArrowDown size={24} className="rotate-90" />
+          <FiArrowDown size={24}  className="color-white rotate-90" />
         </button>
         <button
           ref={nextRef}
-          className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition"
+          className="p-3 bg-[#4C4C4C3B] rounded-full hover:bg-hover_service_bg transition hover:[box-shadow:0px_4px_6px_-4px_#AD46FF40,0px_10px_15px_-3px_#AD46FF40]"
         >
           <FiArrowDown size={24} className="-rotate-90" />
         </button>

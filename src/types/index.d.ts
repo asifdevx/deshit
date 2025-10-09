@@ -43,4 +43,5 @@ type AnimatedBorderProps = {
   borderRadius?: string;
   handleClick?: () => void;
   type?: "button" | "submit" | "reset";  
+  
 };

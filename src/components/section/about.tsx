@@ -20,7 +20,7 @@ const About: React.FC = () => {
   
               gsap.fromTo(entry,
                 { value: 0 },
-                { value: target, duration: 2, ease: "power2.out", onUpdate: function () {
+                { value: target, duration: 4,delay:1, ease: "power2.out", onUpdate: function () {
                     counter.textContent = `${Math.floor(this.targets()[0].value).toString()}+ `;
                   }
                 }

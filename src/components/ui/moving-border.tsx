@@ -11,7 +11,7 @@ interface AnimatedTrailProps extends React.HTMLAttributes<HTMLDivElement> {
 
   trailColor?: string;
   trailSize?: "sm" | "md" | "lg";
-  borderColor?:string;
+  borderColor?: string;
 }
 
 const sizes = {
@@ -20,33 +20,40 @@ const sizes = {
   lg: 20,
 };
 
- function AnimatedBorderTrail({
+function AnimatedBorderTrail({
   children,
   className,
   duration = "5s",
   trailColor = "purple",
   trailSize = "md",
-  borderColor="black",
+  borderColor = "black",
   contentClassName,
   ...props
 }: AnimatedTrailProps) {
   return (
     <div
       {...props}
-      className={cn("relative h-fit w-fit overflow-hidden shadow-sm ", className)}
+      className={cn(
+        "relative h-fit w-fit overflow-hidden shadow-sm ",
+        className
+      )}
     >
       <div
-        className="absolute inset-0 h-full w-full animate-trail"
-        style={{
-          "--duration": duration ?? "10s",
-          "--angle": "0deg",
-          background: `conic-gradient(from var(--angle) at 50% 50%, ${borderColor}  ${100 - sizes[trailSize]}%, ${trailColor})`,
-        }as React.CSSProperties} 
+        className="absolute inset-0 h-full w-full animate-trail pointer-events-none"
+        style={
+          {
+            "--duration": duration ?? "10s",
+            "--angle": "0deg",
+            background: `conic-gradient(from var(--angle) at 50% 50%, ${borderColor}  ${
+              100 - sizes[trailSize]
+            }%, ${trailColor})`,
+          } as React.CSSProperties
+        }
       />
       <div
         className={cn(
           "relative h-full w-full overflow-hidden ",
-          contentClassName,
+          contentClassName
         )}
       >
         {children}
@@ -55,28 +62,33 @@ const sizes = {
   );
 }
 
-
-
-
-const AnimatedBorder = ({ title, arrow , borderRadius,handleClick,type }: AnimatedBorderProps) => {
-  const buttonClasses = cn(
-    "group relative flex items-center justify-center gap-2 text-base font-medium transition-all duration-300",
-    "bg-moving_button_bg hover:bg-btnBg",
-    "text-black hover:text-white",
-   
-   
-  );
+const AnimatedBorder = ({
+  title,
+  arrow,
+  borderRadius,
+  handleClick,
+  type,
+}: AnimatedBorderProps) => {
+ 
 
   return (
     <AnimatedBorderTrail
-      className="group p-[2px] transition-all duration-300 hover:scale-[1.05]"
+      className="p-[2px] transition-all duration-300 hover:scale-[1.05]"
       contentClassName=""
       trailColor="rgba(19,253,253,0.9)"
       trailSize="lg"
       style={{ borderRadius }}
       onClick={handleClick}
     >
-      <button className={buttonClasses} style={{ borderRadius }} type={type}>
+      <button
+        className={cn(
+          "group relative flex items-center justify-center gap-2 text-base font-medium transition-all duration-300",
+          "bg-moving_button_bg hover:bg-btnBg",
+          "text-black hover:text-white"
+        )}
+        style={{ borderRadius }}
+        type={type}
+      >
         <div className="flex items-center justify-center relative transition-all duration-300 px-6 py-2">
           {/* Arrow */}
           {arrow && (

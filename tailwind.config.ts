@@ -158,11 +158,14 @@ const config: Config = {
   			webBg: 'radial-gradient(circle at 50% 40%, #35359F 0%, #33339A 0%, #232369 46%, #1D1D56 68%, #131339 100%)',
   			lineColor: 'linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%, rgba(72, 139, 255, 0.357) 50%, rgba(0, 0, 0, 0) 100%)',
   			hover_service_bg: ' linear-gradient(180deg, #F94A5B 0%, #6A4FFF 50%)',
-
+			//outline
+			"border_outline":"linear-gradient(317deg, #13fdfd 0%, rgba(19, 215, 253, 1) 50%, rgba(19, 191, 253, 1) 62.96%, #139bfd 100%)",
 			// moving Button
 			"moving_button_bg":"linear-gradient(145deg, #e2e8ec, #ffffff)",
 			"hover_moving_button_bg":"linear-gradient(317deg, #13fdfd 0%, rgba(19, 215, 253, 1) 50%, rgba(19, 191, 253, 1) 62.96%, #139bfd 100%)", 
-  		}
+			
+
+		}
   	},
   	fontFamily: {
   		ponomar: [

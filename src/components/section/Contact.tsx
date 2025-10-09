@@ -43,7 +43,7 @@ const Contact = () => {
       id="contact"
       className="w-full flex flex-col items-center justify-center gap-4 bg-black py-14 "
     >
-      <h1 className="text-center text-[#EDE5DB] font-bold">LET'S CONNECT</h1>
+      <h1 className="text-center text-4xl md:text-5xl lg:text-7xl text-[#EDE5DB] font-bold">LET'S CONNECT</h1>
       <div className="max-screen  flex flex-col md:flex-row items-center gap-10">
         {/* Input section  */}
         <div className="p-5 w-full md:w-1/2 bg-[#212025] flex flex-col justify-start items-center blue-glassmorphism">
@@ -74,11 +74,12 @@ const Contact = () => {
               handleChange={handleChange}
             />
             <textarea
-              name="Please type your message here..."
+              name="message"
               value={inputData.message}
               onChange={handleChange}
               required
-              className="w-full rounded-lg px-4 py-2 bg-[#27262B] text-white placeholder:text-[#8E8B8B] outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#27262B]"
+              placeholder="Please type your message here..."
+              className="w-full  px-4 min-h-28 rounded-xl py-2 bg-[#27262B] text-white placeholder:text-[#8E8B8B] outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#27262B]"
             />
             <div className="w-full flex-center ">
               <AnimatedBorder
@@ -86,6 +87,7 @@ const Contact = () => {
                 arrow="&rarr;"
                 borderRadius="300px"
                 type="submit"
+              
               />
             </div>
           </form>
