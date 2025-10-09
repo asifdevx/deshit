@@ -59,7 +59,7 @@ const ContactMe = () => {
       });
     });
 
-    // Cleanup
+    
     return () => {
       items.forEach((item) => {
         const newItem = item.cloneNode(true);

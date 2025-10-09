@@ -86,8 +86,6 @@ const ContentSlider = ({
           <SwiperSlide key={i}>{child}</SwiperSlide>
         ))}
       </Swiper>
-
-      {/* Pagination */}
       <div
         ref={paginationRef}
         className="flex justify-center mt-6 lg:mt-12 swiper-pagination-custom"
