@@ -87,7 +87,7 @@ GitHub: https://github.com/asifdevx/deshit
 
 Live Demo: (Add your live demo link here if hosted)
 
-Built with ❤️ by asifdevx
+Build by asifdevx
 
 
 ---
